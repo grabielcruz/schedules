@@ -5,13 +5,13 @@ export interface Grade {
 }
 
 interface HoursPerDayOfSchedule {
-  Monday: DayWeek;
-  Tuesday: DayWeek;
-  Wednesday: DayWeek;
-  Thursday: DayWeek;
-  Friday: DayWeek;
-  Saturday: DayWeek;
-  Sunday: DayWeek;
+  Monday: DaySchedule;
+  Tuesday: DaySchedule;
+  Wednesday: DaySchedule;
+  Thursday: DaySchedule;
+  Friday: DaySchedule;
+  Saturday: DaySchedule;
+  Sunday: DaySchedule;
 }
 
 interface Subject {
@@ -28,22 +28,29 @@ interface Teacher {
 }
 
 interface TeacherSchedule {
-  Monday: DayWeek;
-  Tuesday: DayWeek;
-  Wednesday: DayWeek;
-  Thursday: DayWeek;
-  Friday: DayWeek;
-  Saturday: DayWeek;
-  Sunday: DayWeek;
+  Monday: DayTeacher;
+  Tuesday: DayTeacher;
+  Wednesday: DayTeacher;
+  Thursday: DayTeacher;
+  Friday: DayTeacher;
+  Saturday: DayTeacher;
+  Sunday: DayTeacher;
 }
 
-interface DayWeek {
+interface DaySchedule {
   NumOfHours: number;
-  Hours: ScheduleHour[] | TeacherHour[];
+  Hours: ScheduleHour[];
+}
+
+interface DayTeacher {
+  NumOfHours: number;
+  Hours: TeacherHour[];
 }
 
 interface ScheduleHour {
   Type: 'free' | 'shared' | 'single' | 'unoccupied';
+  Subject1: Subject;
+  Subject2: Subject | null;
 }
 
 interface TeacherHour {
