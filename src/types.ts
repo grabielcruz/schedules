@@ -19,7 +19,7 @@ interface Subject {
   HoursPerWeek: number;
   MaxHoursPerDay: number;
   NumOfSharedHours: number;
-  Teacher: Teacher;
+  Teacher: Teacher | null;
 }
 
 interface Teacher {
