@@ -1,7 +1,8 @@
 export interface Grade {
   Name: string;
-  Subjects: Subject[];
-  HoursPerDay: HoursPerDayOfSchedule;
+  Subjects: Subject[] | null;
+  HoursPerDay: HoursPerDayOfSchedule | null;
+  HoursPerWeek: number;
 }
 
 interface HoursPerDayOfSchedule {

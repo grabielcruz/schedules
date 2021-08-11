@@ -6,7 +6,13 @@ const initialState: Grade[] = [];
 export const gradesSlice = createSlice({
   name: "grades",
   initialState,
-  reducers: {},
+  reducers: {
+    addGrade: (state, action) => {
+      state.push(action.payload)
+    }
+  },
 });
 
+export const { addGrade } = gradesSlice.actions
+ 
 export default gradesSlice.reducer

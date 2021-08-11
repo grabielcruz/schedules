@@ -1,7 +1,9 @@
+import Grades from "./app/features/Grades"
+
 const App = () => {
   return (
     <div>
-      Hello
+      <Grades />
     </div>
   )
 }
